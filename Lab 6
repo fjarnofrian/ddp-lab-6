@@ -1,0 +1,90 @@
+# Nama: fajar nofrian syahputra
+# NIM:  0110120193
+# kelas:SI03
+def jumlah_batas(nums, batas): 
+  # Tulis kode fungsi jumlah_batas() di bawah ini
+  jml = 0
+  for i in range(len(nums)):
+    if(nums[i] > batas):
+      hitung = nums[i]
+      jml += hitung
+    else:
+      pass
+  return jml
+  # Hapus pass jika implementasi sudah dibuat
+  
+
+def list_nonvokal(s):
+  # Tulis kode fungsi list_nonvokal() di bawah ini
+  s = s.replace("a","")
+  s = s.replace("i","")
+  s = s.replace("u","")
+  s = s.replace("e","")
+  s = s.replace("o","")
+  s = s.replace("A","")
+  s = s.replace("I","")
+  s = s.replace("U","")
+  s = s.replace("E","")
+  s = s.replace("O","")
+  lis = []
+  lis[:0] = s
+  return lis
+    
+  
+  # Hapus pass jika implementasi sudah dibuat
+
+def list_modify(alist, command, position, value=None):
+  # Tulis kode fungsi list_modify() di bawah ini
+  if command == 'remove' and position == 'start':
+    del alist[0]
+  elif command == 'remove' and position == 'end':
+    del alist[len(alist)-1]
+  elif command == 'add' and position == 'start':
+    alist.insert(0, value)
+  elif command == 'add' and position == 'end':
+    alist.append(value)
+  return alist
+  # Hapus pass jika implementasi sudah dibuat
+
+
+
+
+
+# Mulai baris ini hingga baris paling bawah
+# digunakan untuk mengetes fungsi yang telah dibuat.
+# Tidak perlu mengubah bagian ini.
+# Ketika dijalankan, program akan menampilkan contoh
+# pemanggilan fungsi dan solusi yang seharusnya.
+# Cocokkan hasil pemanggilan fungsi dengan solusi  
+# yang seharusnya.
+def test():
+  r = jumlah_batas([8, 7, 6, 10, 1], 5)
+  print(f"jumlah_batas([8, 7, 6, 10, 1], 5) = {r} \n(solusi: 31)")
+  print()
+  r = jumlah_batas([1, -7, -10, 1], -5)
+  print(f"jumlah_batas([1, -7, -10, 1], -5) = {r} \n(solusi: 2)")
+  print()
+  r = list_nonvokal('Halo')
+  print(f"list_nonvokal('Halo') = {r} \n(solusi: ['H', 'l'])")
+  print()
+  r = list_nonvokal('AAAAAooooo')
+  print(f"list_nonvokal('AAAAAooooo') = {r} \n(solusi: [])")
+  print()
+  r = list_nonvokal('Saya cinta programming')
+  print(f"list_nonvokal('Saya cinta programming') = {r} \n(solusi: ['S', 'y', ' ', 'c', 'n', 't', ' ', 'p', 'r', 'g', 'r', 'm', 'm', 'n', 'g'])")
+  print()
+  r = list_modify(['ayam', 'ikan', 'kucing'], 'add', 'start', 'bebek')
+  print(f"list_modify(['ayam', 'ikan', 'kucing'], 'add', 'start', 'bebek') = {r} \n(solusi: ['bebek', 'ayam', 'ikan', 'kucing'])")
+  print()
+  r = list_modify(['ayam', 'ikan', 'kucing'], 'add', 'end', 'bebek')
+  print(f"list_modify(['ayam', 'ikan', 'kucing'], 'add', 'end', 'bebek') = {r} \n(solusi: ['ayam', 'ikan', 'kucing', 'bebek'])")
+  print()
+  r = list_modify(['ayam', 'ikan', 'kucing'], 'remove', 'start')
+  print(f"list_modify(['ayam', 'ikan', 'kucing'], 'remove', 'start') = {r} \n(solusi: ['ikan', 'kucing'])")
+  print()
+  r = list_modify(['ayam', 'ikan', 'kucing'], 'remove', 'end')
+  print(f"list_modify(['ayam', 'ikan', 'kucing'], 'remove', 'end') = {r} \n(solusi: ['ayam', 'ikan'])")
+  print()
+
+if __name__ == '__main__':
+  test()
